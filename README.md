@@ -25,3 +25,8 @@ Bypass Elastic Agent In the credential Access tactic
 2. Navigate to the project directory:  
 ```powershell
 cd C:\Temp
+```
+---
+```powershell
+.\loader.ps1
+```
