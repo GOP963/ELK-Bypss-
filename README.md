@@ -105,9 +105,3 @@ The scripts help analysts understand **how attackers abuse trusted binaries (LOL
 | **Elastic Self‑Execution** | Using Elastic’s own process to trigger PowerShell, preventing internal EDR blockage |
 
 ---
-
-اگر خواستی من می‌تونم:
-- این متن رو تبدیل به فایل **README.md آماده برای GitHub** بکنم،
-- و نسخه انگلیسی کامل با Markdown ساختار یافته و Headerهای درست تحویل بدهم.  
-
-آیا می‌خواهی هم‌اکنون فایل `README.md`  این بخش ساخته شود؟ش ساخته شود؟
