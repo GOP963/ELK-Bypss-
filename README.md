@@ -1,32 +1,27 @@
 # 💀 EDR-Bypss
 Bypass Elastic Agent In the credential Access tactic
 
+# Mini PowerShell Loader – Educational Scenario
 
-# Mini PowerShell Loader
+👋 **Welcome!**  
 
-**Mini PowerShell Loader** is a small educational project that demonstrates how to load and execute scripts directly in memory using PowerShell. It focuses on in-memory execution techniques, Base64 decoding, GZip decompression, and dynamic code execution.
-
----
-
-## Features
-
-- Load Base64-encoded and GZip-compressed scripts in memory
-- Decode and execute scripts without writing to disk
-- Educational example to understand in-memory execution
-- Utilizes `System.IO.MemoryStream` and `System.IO.Compression.GZipStream`
-- Demonstrates simple dynamic script execution with `Invoke-Expression`
-- Shows basic string manipulation and character arithmetic for decoding
+This project demonstrates an advanced PowerShell in-memory execution scenario, designed for educational purposes and security research.
 
 ---
 
-## How to Run
+## Step 1: Constrained Language Bypass
 
-1. Open PowerShell with appropriate permissions.  
-2. Navigate to the project directory:  
+In the first step, we tackled **Constrained Language PowerShell**, a restricted mode often encountered in real-world scenarios.  
+
+- Constrained Language restricts access to many .NET objects and cmdlets.  
+- By bypassing this mode, we gain the ability to execute more advanced scripts and manipulate memory objects.
+
+---
+
+## Step 2: Using a LOLBIN for Elastic Endpoint Snapshot
+
+Next, we leveraged a **LOLBIN technique**. In this case, we used the legitimate `forfiles` binary, a method previously observed in operations by **APT28**, to execute our script:
+
 ```powershell
-cd C:\Temp
-```
----
-```powershell
-.\loader.ps1
-```
+forfiles /p "C:\Program Files\Elastic\Endpoint" /m elastic-endpoint.exe /c "powershell -command C:\Temp\system32.ps1"
+
