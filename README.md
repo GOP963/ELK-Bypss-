@@ -30,6 +30,7 @@ This project demonstrates that layered approach.
 
 ## 🥇 Step 1 — Constrained Language Mode Bypass  
 
+![ELK-Bypss-](.\pic\CLM.png)
 The first phase deals with **escaping restricted PowerShell contexts**.
 
 When PowerShell operates under CLM, only basic scripting and approved cmdlets are allowed. Complex object manipulations—such as dynamic .NET calls—are prohibited.  
