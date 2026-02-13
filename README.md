@@ -206,21 +206,45 @@ From a defensive perspective, this emphasizes the importance of:
 
 ---
 
-### 🧠 MITRE ATT&CK Mapping
+## 🧠 MITRE ATT&CK Mapping
 
-#### ├── [Privilege Escalation (TA0004)](https://attack.mitre.org/tactics/TA0004/)
-│   └── [Access Token Manipulation (T1134)](https://attack.mitre.org/techniques/T1134/)
-│       └── [Create Process with Token (T1134.002)](https://attack.mitre.org/techniques/T1134/002/)
-│
-├── [Defense Evasion (TA0005)](https://attack.mitre.org/tactics/TA0005/)
-│   ├── [Signed Binary Proxy Execution (T1218)](https://attack.mitre.org/techniques/T1218/)
-│   └── [Bypass via LOLBIN / CLM Manipulation](https://attack.mitre.org/techniques/T1218/)
-│
-├── [Credential Access (TA0006)](https://attack.mitre.org/tactics/TA0006/)
-│   ├── [OS Credential Dumping (T1003)](https://attack.mitre.org/techniques/T1003/)
-│   ├── [LSASS Memory Dump (T1003.001)](https://attack.mitre.org/techniques/T1003/001/)
-│   └── [Volume Shadow Copy (VSS Snapshot) (T1003.003)](https://attack.mitre.org/techniques/T1003/003/)
-│
-└── [Discovery (TA0007)](https://attack.mitre.org/tactics/TA0007/)
-    └── [System Information Discovery (T1082)](https://attack.mitre.org/techniques/T1082/)
+- **Privilege Escalation**  
+  *(TA0004)*  
+  [https://attack.mitre.org/tactics/TA0004/](https://attack.mitre.org/tactics/TA0004/)
 
+  └── **Access Token Manipulation**  
+&nbsp;&nbsp;&nbsp;&nbsp;*(T1134)*  
+&nbsp;&nbsp;&nbsp;&nbsp;[https://attack.mitre.org/techniques/T1134/](https://attack.mitre.org/techniques/T1134/)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── **Create Process with Token**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(T1134.002)*  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[https://attack.mitre.org/techniques/T1134/002/](https://attack.mitre.org/techniques/T1134/002/)
+
+
+- **Defense Evasion**  
+  *(TA0005)*  
+  [https://attack.mitre.org/tactics/TA0005/](https://attack.mitre.org/tactics/TA0005/)
+
+  ├── **Signed Binary Proxy Execution (LOLBIN)**  
+&nbsp;&nbsp;&nbsp;&nbsp;*(T1218)*  
+&nbsp;&nbsp;&nbsp;&nbsp;[https://attack.mitre.org/techniques/T1218/](https://attack.mitre.org/techniques/T1218/)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── **CLM Bypass (PowerShell Execution)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🔗 Reference: [Constrained Language Mode Bypass](https://www.ired.team/offensive-security/code-execution/powershell-constrained-language-mode-bypass)
+
+
+- **Credential Access**  
+  *(TA0006)*  
+  [https://attack.mitre.org/tactics/TA0006/](https://attack.mitre.org/tactics/TA0006/)
+
+  ├── **OS Credential Dumping**  
+&nbsp;&nbsp;&nbsp;&nbsp;*(T1003)*  
+&nbsp;&nbsp;&nbsp;&nbsp;[https://attack.mitre.org/techniques/T1003/](https://attack.mitre.org/techniques/T1003/)
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── **Volume Shadow Copy (VSS Snapshot)**  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*(T1003.003)*  
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[https://attack.mitre.org/techniques/T1003/003/](https://attack.mitre.org/techniques/T1003/003/)
+
+
+---
+)
