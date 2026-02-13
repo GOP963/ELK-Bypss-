@@ -42,6 +42,10 @@ This capability is essential for later stages that rely on dynamic code loading,
 
 Users can click the link above to access a full description and proof‑of‑concept examples of this bypass method.
 
+```powershell
+$ExcutionContext.SessionState.LanguageMode
+```
+
 ---
 
 ## 🥈 Step 2 — LOLBIN Execution via `forfiles`
