@@ -206,4 +206,21 @@ From a defensive perspective, this emphasizes the importance of:
 
 ---
 
+### 🧠 MITRE ATT&CK Mapping
+
+#### ├── [Privilege Escalation (TA0004)](https://attack.mitre.org/tactics/TA0004/)
+│   └── [Access Token Manipulation (T1134)](https://attack.mitre.org/techniques/T1134/)
+│       └── [Create Process with Token (T1134.002)](https://attack.mitre.org/techniques/T1134/002/)
+│
+├── [Defense Evasion (TA0005)](https://attack.mitre.org/tactics/TA0005/)
+│   ├── [Signed Binary Proxy Execution (T1218)](https://attack.mitre.org/techniques/T1218/)
+│   └── [Bypass via LOLBIN / CLM Manipulation](https://attack.mitre.org/techniques/T1218/)
+│
+├── [Credential Access (TA0006)](https://attack.mitre.org/tactics/TA0006/)
+│   ├── [OS Credential Dumping (T1003)](https://attack.mitre.org/techniques/T1003/)
+│   ├── [LSASS Memory Dump (T1003.001)](https://attack.mitre.org/techniques/T1003/001/)
+│   └── [Volume Shadow Copy (VSS Snapshot) (T1003.003)](https://attack.mitre.org/techniques/T1003/003/)
+│
+└── [Discovery (TA0007)](https://attack.mitre.org/tactics/TA0007/)
+    └── [System Information Discovery (T1082)](https://attack.mitre.org/techniques/T1082/)
 
