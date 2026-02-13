@@ -100,6 +100,97 @@ The scripts help analysts understand **how attackers abuse trusted binaries (LOL
 
 ---
 
+## 🚨 Detection Results & Technical Observations
+
+![ELK Bypass – CLM](pic/ELK.png)
+
+During testing, it is critical to distinguish **why an alert was generated** from **whether the operation actually failed**.
+
+### 🔍 Why was an alert generated?
+
+The alert was triggered **solely because the snapshot was obtained via Registry-based access**.
+
+Elastic Endpoint treats registry interaction related to snapshot acquisition as a **high‑confidence behavioral signal**, commonly associated with:
+
+- Credential access activity  
+- Memory snapshot preparation  
+- LSASS‑related artifact collection  
+
+As a result, the EDR correctly **raised a notification** when the snapshot was requested through the registry path.
+
+⚠️ This alert was **behavioral and informational**, not preventative.
+
+---
+
+### ✅ Why did the dump still succeed?
+
+Despite the alert:
+
+- The action was **not blocked**
+- The snapshot was successfully created
+- The dump operation **completed successfully**
+
+This demonstrates that the detection occurred **after the critical operation**, meaning:
+
+> The alert reflected *visibility*, not *enforcement*.
+
+In short:
+**Elastic detected the snapshot method — not the final outcome.**
+
+![ELK Bypass – CLM](pic/show.png)
+---
+
+## 🧠 Techniques That Do NOT Trigger Alerts
+
+When more mature snapshot techniques are used, detection behavior changes entirely.
+
+### 🔄 VSS‑Based Snapshot Acquisition
+
+Snapshot creation performed via **Volume Shadow Copy Service (VSS)** does **not** trigger alerts in this scenario.
+
+Key observations:
+
+- No registry-based snapshot indicators are touched  
+- No high‑signal heuristic rules are matched  
+- **No notification or alert is generated**
+
+This approach is widely known and leveraged in real‑world tooling — including frameworks such as **Impacket**, which relies on VSS-based mechanisms for snapshot and credential-related operations.
+
+✅ In this case:
+- The snapshot succeeds
+- The dump succeeds
+- Elastic remains **silent**
+
+---
+
+## 📊 Summary of Observed Behavior
+
+| Snapshot Technique | Alert Triggered | Dump Result |
+|---|---|---|
+| Registry‑based snapshot | ✅ Yes | ✅ Successful |
+| VSS‑based snapshot | ❌ No | ✅ Successful |
+
+---
+
+## 🎯 Key Takeaway
+
+This highlights a crucial defensive insight:
+
+> Detection engines are often **method‑centric**, not **goal‑centric**.
+
+Small changes in *how* an action is performed — even when the objective is identical — can completely alter detection outcomes.
+
+From a defensive perspective, this emphasizes the importance of:
+- Monitoring **snapshot semantics**, not just registry indicators  
+- Correlating execution context and data flow  
+- Understanding that **alert presence does not imply operational failure**
+
+---
+
+
+
+---
+
 ## 🧩 Key Concepts Recap
 
 | Concept | Description |
@@ -110,3 +201,5 @@ The scripts help analysts understand **how attackers abuse trusted binaries (LOL
 | **Elastic Self‑Execution** | Using Elastic’s own process to trigger PowerShell, preventing internal EDR blockage |
 
 ---
+
+
