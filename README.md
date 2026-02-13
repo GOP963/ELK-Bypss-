@@ -134,6 +134,8 @@ Despite the alert:
 
 This demonstrates that the detection occurred **after the critical operation**, meaning:
 
+![ELK Bypass – CLM](pic/mimikatz.png)
+
 > The alert reflected *visibility*, not *enforcement*.
 
 In short:
