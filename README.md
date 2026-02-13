@@ -124,6 +124,8 @@ As a result, the EDR correctly **raised a notification** when the snapshot was r
 
 ### ✅ Why did the dump still succeed?
 
+![ELK Bypass – CLM](pic/sam.png)
+
 Despite the alert:
 
 - The action was **not blocked**
