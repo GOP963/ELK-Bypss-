@@ -22,7 +22,7 @@ This project demonstrates a **multi‑stage approach** to bypass such protection
 
 ---
 
-## Step 1: Constrained Language Bypass
+## Step 1: Constrained Language Mode Bypass
 
 The first challenge is **Constrained Language Mode** in PowerShell.
 
